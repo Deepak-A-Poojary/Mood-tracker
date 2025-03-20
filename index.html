@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="/fullcalendar-6.1.15/dist/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100 h-vh items-center p-0 md:p-6 ">
+    <h1 class="text-3xl font-bold mb-4 text-center block">
+      Daily Mood Tracker
+    </h1>
+    <div
+      class="bg-gray-100 items-center p-2 md:p-6 grid grid-cols-1 w-vw gap-5 lg:grid-cols-2"
+    >
+      <div class="moodSection items-start grid h-full place-content-center">
+        <!-- Mood Selection -->
+        <div class="bg-white p-6 rounded-lg shadow-md w-auto md:w-[600px] grid gap-3">
+          <h2 id="qtsDisplay" class="text-lg font-semibold mb-2 text-center">How are you feeling today?</h2>
+          <div id="moodSelectionContainer" class="flex justify-between gap-2">
+            <button
+              id="Excited"
+              class="p-3 rounded-lg text-2xl bg-gray-200 hover:bg-gray-300 cursor-pointer"
+            >
+              🥳
+            </button>
+            <button
+              id="Happy"
+              class="p-3 rounded-lg text-2xl bg-gray-200 hover:bg-gray-300 cursor-pointer"
+            >
+              😊
+            </button>
+            <button
+              id="Confused"
+              class="p-3 rounded-lg text-2xl bg-gray-200 hover:bg-gray-300 cursor-pointer"
+            >
+              😕
+            </button>
+            <button
+              id="Worried"
+              class="p-3 rounded-lg text-2xl bg-gray-200 hover:bg-gray-300 cursor-pointer"
+            >
+              😧
+            </button>
+            <button
+              id="Sad"
+              class="p-3 rounded-lg text-2xl bg-gray-200 hover:bg-gray-300 cursor-pointer"
+            >
+              😔
+            </button>
+          </div>
+          <h2 id="selectedDate" class="text-lg font-semibold mt-3 hidden">
+            Date:- 17 March 2025
+          </h2>
+        </div>
+        <!-- Mood Timeline View -->
+        <div class="bg-white p-6 rounded-lg shadow-md w-full mt-6 text-center">
+          <h2 class="text-lg font-semibold mb-2">Mood Timeline (Last 5 days)</h2>
+          <ul class="space-y-2 gap-2 flex md:block" id="moodTimeLineUl">
+            <!-- Data is been injected from script -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Calendar View - Full calender-->
+      <div
+        class="grid w-auto place-items-center"
+      >
+        <div
+          id="calendar"
+          class="bg-white p-6 flex wrap rounded-lg shadow-md w-full"
+        ></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
